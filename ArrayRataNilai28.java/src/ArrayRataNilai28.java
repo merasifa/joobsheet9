@@ -17,24 +17,32 @@ public class ArrayRataNilai28 {
             System.out.print("Masukkan nilai mahasiswa ke-"+(i+1)+" :");
             nilaiMhs[i] = scan28.nextInt();
 
-            if (nilaiMhs[i] > 70) {
-                jumlahMhsLulus++;
-                jumlahNilaiLulus += nilaiMhs[i];
-            } else {
-                jumlahMhsTdkLulus++;
-                jumlahNilaitdkLulus += nilaiMhs[i];
-            }
+    //         if (nilaiMhs[i] > 70) {
+    //             jumlahMhsLulus++;
+    //             jumlahNilaiLulus += nilaiMhs[i];
+    //         } else {
+    //             jumlahMhsTdkLulus++;
+    //             jumlahNilaitdkLulus += nilaiMhs[i];
+    //         }
           
-        }
-          System.out.println("Rata-rata nilai lulus = " + jumlahNilaiLulus/jumlahMhsLulus);
-          System.out.println("Rata-rata nilai tidak lulus = " + jumlahNilaitdkLulus/jumlahMhsTdkLulus);
+    //     }
+    //       System.out.println("Rata-rata nilai lulus = " + jumlahNilaiLulus/jumlahMhsLulus);
+    //       System.out.println("Rata-rata nilai tidak lulus = " + jumlahNilaitdkLulus/jumlahMhsTdkLulus);
     }
 
-        // for (int i = 0; i < nilaiMhs.length; i++) {
-        //     total += nilaiMhs[i];
-        // }
-        // rata2 = total/nilaiMhs.length;
-        // System.out.print("Rata-rata nilai = " + rata2);
-
+         for (int i = 0; i < nilaiMhs.length; i++) {
+             total += nilaiMhs[i];
+             if (nilaiMhs[i] > 70) {
+                System.out.println("Mahasiswa ke -"+i+" lulus");
+                
+             } else {
+                System.out.println("Mahhasiswa ke -"+i+" tidak lulus");
+             }
+        }
         
+        
+        rata2 = total/nilaiMhs.length;
+        System.out.print("Rata-rata nilai = " + rata2);
+
+    }
 }
