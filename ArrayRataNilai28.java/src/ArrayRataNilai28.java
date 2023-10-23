@@ -4,20 +4,37 @@ import java.util.Scanner;
 public class ArrayRataNilai28 {
     public static void main(String[] args) throws Exception {
         Scanner scan28 = new Scanner (System.in);
+        System.out.print("Masukkan Jumlah Mahasiswa : ");
+        int jumlah = scan28.nextInt();
 
-        int[] nilaiMhs= new int [10];
+
+        int[] nilaiMhs= new int [jumlah];
         double total = 0;
         double rata2;
+        double jumlahMhsLulus=0, jumlahMhsTdkLulus=0, jumlahNilaiLulus=0, jumlahNilaitdkLulus=0;
 
         for (int i = 0; i < nilaiMhs.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-"+(i+1)+" :");
             nilaiMhs[i] = scan28.nextInt();
-        }
 
-        for (int i = 0; i < nilaiMhs.length; i++) {
-            total += nilaiMhs[i];
+            if (nilaiMhs[i] > 70) {
+                jumlahMhsLulus++;
+                jumlahNilaiLulus += nilaiMhs[i];
+            } else {
+                jumlahMhsTdkLulus++;
+                jumlahNilaitdkLulus += nilaiMhs[i];
+            }
+          
         }
-        rata2 = total/nilaiMhs.length;
-        System.out.print("Rata-rata nilai = " + rata2);
+          System.out.println("Rata-rata nilai lulus = " + jumlahNilaiLulus/jumlahMhsLulus);
+          System.out.println("Rata-rata nilai tidak lulus = " + jumlahNilaitdkLulus/jumlahMhsTdkLulus);
     }
+
+        // for (int i = 0; i < nilaiMhs.length; i++) {
+        //     total += nilaiMhs[i];
+        // }
+        // rata2 = total/nilaiMhs.length;
+        // System.out.print("Rata-rata nilai = " + rata2);
+
+        
 }
